@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuella Adams | Creative Technologist & AI Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style></style>
+
+       @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        :root {
+            --color-bg: #F4F4F7;
+            --color-text: #260c1a;
+            --color-primary-light: #edbfc6;
+            --color-accent-main: #af8d86;
+            --color-accent-strong: #432e36;
+            --color-card-bg: #FFFFFF;
+        }
+
+        .dark {
+            --color-bg: #15060b;
+            --color-text: #edbfc6;
+            --color-primary-light: #260c1a;
+            --color-accent-main: #af8d86;
+            --color-accent-strong: #edbfc6;
+            --color-card-bg: #260c1a;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(38, 12, 26, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-default {
+            background: linear-gradient(to bottom, rgba(38, 12, 26, 0.95), rgba(38, 12, 26, 0.85));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 p-4 lg:px-12 navbar-default transition-all duration-300">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-extrabold tracking-tight text-white">
+                Emmanuella Adams
+            </a>
+
+            <div class="hidden lg:flex space-x-6">
+                <a href="#home" class="text-white hover:text-[#af8d86] transition-colors duration-200">Home</a>
+                <a href="#about" class="text-white hover:text-[#af8d86] transition-colors duration-200">About</a>
+                <a href="#skills" class="text-white hover:text-[#af8d86] transition-colors duration-200">Skills</a>
+                <a href="#projects" class="text-white hover:text-[#af8d86] transition-colors duration-200">Projects</a>
+                <a href="#experience" class="text-white hover:text-[#af8d86] transition-colors duration-200">Experience</a>
+                <a href="#contact" class="text-white hover:text-[#af8d86] transition-colors duration-200">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-white hover:text-[#af8d86] p-2 rounded-full transition-colors duration-300" aria-label="Toggle dark mode">
+                    <span data-lucide="sun" id="sun-icon" class="w-6 h-6 hidden"></span>
+                    <span data-lucide="moon" id="moon-icon" class="w-6 h-6"></span>
+                </button>
+
+                <a href="#" class="hidden lg:block bg-[#af8d86] text-[#260c1a] font-semibold py-2 px-5 rounded-lg shadow-lg hover:bg-[#432e36] hover:text-white transition-all duration-300">
+                    Download CV
+                </a>
+            </div>
+            
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-[#260c1a] shadow-xl">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="#home" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Home</a>
+                <a href="#about" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">About</a>
+                <a href="#skills" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Skills</a>
+                <a href="#projects" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Projects</a>
+                <a href="#experience" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Experience</a>
+                <a href="#contact" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Contact</a>
+                <a href="#" class="bg-[#af8d86] text-[#260c1a] font-semibold py-2 px-5 rounded-lg text-center mt-2 hover:bg-[#432e36] hover:text-white transition-colors duration-300">
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden transition-colors duration-500" style="background-color: var(--color-bg);">
+            <div class="absolute inset-0 z-0 opacity-30">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="background-color: var(--color-accent-main);"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="background-color: var(--color-accent-strong);"></div>
+            </div>
+
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight" style="color: var(--color-text);">
+                            Hi, I'm <span style="color: var(--color-accent-strong);">Emmanuella Adams</span>.
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6" style="color: var(--color-accent-main);">
+                            Creative Technologist | AI & ML Researcher | Python Developer 
+                        </h2>
+                        <p class="text-lg mb-8 max-w-xl lg:max-w-none mx-auto lg:mx-0" style="color: var(--color-text); opacity: 0.8;">
+                            I work at the intersection of Python, AI, and cloud infrastructure, building systems that solve real problems. My mission is to explore what's possible when logic meets human creativity and storytelling.
+                        </p>
+                        
+                                               <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
+                            <a href="#projects" class="inline-block bg-[#260c1a] dark:bg-[#af8d86] text-white dark:text-[#260c1a] font-bold py-3 px-8 rounded-full shadow-xl transform hover:scale-105 transition-all duration-300">
+                                View My Projects
+                            </a>
+                            <a href="#" class="inline-block border-2 border-[#af8d86] text-[#af8d86] dark:text-[#edbfc6] dark:border-[#edbfc6] font-bold py-3 px-8 rounded-full hover:bg-[#af8d86] hover:text-[#260c1a] dark:hover:bg-[#edbfc6] transition-all duration-300">
+                                Download CV
+                            </a>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center justify-center lg:justify-start">
+                            <a href="#" class="inline-flex items-center text-[#af8d86] dark:text-[#edbfc6] font-semibold hover:text-[#432e36] dark:hover:text-white transition-colors duration-300 group">
+                                <span data-lucide="book-open" class="w-5 h-5 mr-2 group-hover:animate-pulse"></span>
+                                Read a Free Book
+                                <span data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="w-72 h-72 md:w-96 md:h-96 rounded-full flex items-center justify-center p-4 shadow-2xl relative border-8 transition-colors duration-500" style="background-color: var(--color-accent-strong); border-color: var(--color-accent-main);">
+                            <svg class="w-2/3 h-2/3 opacity-70" style="color: var(--color-accent-main);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="5" width="14" height="14" rx="2" ry="2"/>
+                                <path d="M15 9l-6 6"/>
+                                <path d="M15 15l-6 -6"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <span class="absolute bottom-4 right-4 text-xs font-mono px-2 py-1 rounded-full shadow-md" style="background-color: var(--color-accent-main); color: #260c1a;">
+                                AI/Code
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-20 lg:py-28 bg-[#edbfc6] dark:bg-[#1a0a12] transition-colors duration-500">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <div class="w-64 h-64 bg-[#5f4842] dark:bg-[#432e36] rounded-3xl overflow-hidden shadow-2xl mb-4 border-4 border-[#af8d86]">
+                             <img src="https://placehold.co/256x256/5f4842/edbfc6?text=Emmanuella+Adams" alt="Emmanuella Adams Professional Portrait" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-sm font-medium text-[#260c1a] dark:text-[#edbfc6] mt-2 p-2 bg-white dark:bg-[#260c1a] rounded-md shadow-inner transition-colors duration-500">
+                            Based in Nigeria • Creative & Technical Mind
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-bold text-[#432e36] dark:text-[#af8d86] uppercase tracking-widest mb-2 flex items-center transition-colors duration-500">
+                            <span data-lucide="lightbulb" class="w-4 h-4 mr-2"></span>
+                            About Me
+                        </h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#260c1a] dark:text-[#edbfc6] mb-6 transition-colors duration-500">
+                            Building Systems Where Logic Meets Narrative
+                        </h2>
+                        
+                        <p class="text-[#260c1a] dark:text-[#f0f0f0] mb-6 leading-relaxed text-base transition-colors duration-500">
+                            I'm an aspiring AI/ML Intern and Software Engineering student fascinated by how technology can extend human potential. I'm currently deepening my skills in Python, GCP, and AI/ML foundations through projects like UrbanEye (Computer Vision) and StoryOracle (NLP). Every commit is an opportunity to turn abstract concepts into working, reproducible tools.
+                        </p>
+
+                        <h4 class="text-xl font-semibold text-[#260c1a] dark:text-[#edbfc6] mb-3 transition-colors duration-500">
+                            Core Values
+                        </h4>
+                        <ul class="space-y-3 text-[#260c1a] dark:text-[#f0f0f0] transition-colors duration-500">
+                            <li class="flex items-start">
+                                <span data-lucide="sparkles" class="w-5 h-5 mr-3 text-[#432e36] dark:text-[#af8d86] flex-shrink-0 transition-colors duration-500"></span>
+                                <div><strong class="text-[#260c1a] dark:text-[#edbfc6]">Creativity:</strong> Bridging technology with narrative and unique problem-solving.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span data-lucide="check-square" class="w-5 h-5 mr-3 text-[#432e36] dark:text-[#af8d86] flex-shrink-0 transition-colors duration-500"></span>
+                                <div><strong class="text-[#260c1a] dark:text-[#edbfc6]">Precision:</strong> Writing clean, reproducible, and efficient code.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span data-lucide="repeat-2" class="w-5 h-5 mr-3 text-[#432e36] dark:text-[#af8d86] flex-shrink-0 transition-colors duration-500"></span>
+                                <div><strong class="text-[#260c1a] dark:text-[#edbfc6]">Consistency:</strong> Building daily, shipping projects, and continuous improvement.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span data-lucide="search" class="w-5 h-5 mr-3 text-[#432e36] dark:text-[#af8d86] flex-shrink-0 transition-colors duration-500"></span>
+                                <div><strong class="text-[#260c1a] dark:text-[#edbfc6]">Curiosity:</strong> Researching what's next in AI and Cloud infrastructure.</div>
+                            </li>
+                        </ul>
+
+                        <blockquote class="mt-8 pt-4 border-t border-[#af8d86] italic text-[#432e36] dark:text-[#d4a5a5] transition-colors duration-500">
+                            "My goal is to build meaningful web experiences while exploring AI, automation, and creative systems."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-20 lg:py-28 transition-colors duration-500" style="background-color: var(--color-bg);">
+            <div class="container mx-auto px-6 lg:px-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 flex justify-center items-center" style="color: var(--color-text);">
+                    <span data-lucide="sliders" class="w-8 h-8 mr-3"></span>
+                    Technical & Creative Skills
+                </h2>
+                <p class="text-lg text-center mb-12 max-w-3xl mx-auto" style="color: var(--color-accent-main);">
+                    A snapshot of the tools and competencies I leverage across development, AI, and creative technology.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Technical Skills -->
+                    <div class="p-6 rounded-xl shadow-lg border-t-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center" style="color: var(--color-text);">
+                            <span data-lucide="code" class="w-6 h-6 mr-3" style="color: var(--color-accent-main);"></span>
+                            Technical Skills
+                        </h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Python</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">AI & Machine Learning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">NLP & Computer Vision</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Systems Design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Generative AI</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Prompt Engineering</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">HTML/CSS/JavaScript</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Web Development</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Cloud & Tools -->
+                    <div class="p-6 rounded-xl shadow-lg border-t-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center" style="color: var(--color-text);">
+                            <span data-lucide="cloud" class="w-6 h-6 mr-3" style="color: var(--color-accent-main);"></span>
+                            Cloud & Tools
+                        </h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Google Cloud Platform (GCP)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Git & Github</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Load Balancing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Serverless Computing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Cloud Storage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Infrastructure as a Service</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">APIs</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="p-6 rounded-xl shadow-lg border-t-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center" style="color: var(--color-text);">
+                            <span data-lucide="users" class="w-6 h-6 mr-3" style="color: var(--color-accent-main);"></span>
+                            Soft Skills
+                        </h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Research Skills</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Project Design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Creative Writing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Storytelling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Content Editing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Women-in-tech Advocacy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Data Literacy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-[#af8d86] mr-2">▸</span>
+                                <span style="color: var(--color-text);">Problem-Solving</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-20 lg:py-28 bg-[#260c1a] text-white transition-colors duration-500">
+            <div class="container mx-auto px-6 lg:px-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-[#af8d86] flex justify-center items-center">
+                    <span data-lucide="projector" class="w-8 h-8 mr-3"></span>
+                    Featured Projects
+                </h2>
+                <p class="text-lg text-gray-300 text-center mb-12 max-w-3xl mx-auto">
+                    A selection of my work across Computer Vision, NLP, and creative technology—always aiming for reproducible results.
+                </p>
+
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-[#260c1a] border border-[#af8d86]/20 p-6 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-[#af8d86]/30 hover:border-[#af8d86]">
+                        <h3 class="text-xl font-bold mb-2">UrbanEye</h3>
+                        <p class="text-gray-300 mb-4">Lightweight computer vision pipeline for detecting and segmenting building footprints from satellite imagery (U-Net/ResNet).</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">CV</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">Python</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">TensorFlow</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">U-Net</span>
+                        </div>
+                        <div class="flex space-x-3">
+                         <a href="#" class="border border-[#af8d86] text-[#af8d86] text-sm font-semibold py-2 px-4 rounded-lg hover:bg-[#af8d86]/20 transition-colors duration-200">GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-[#260c1a] border border-[#af8d86]/20 p-6 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-[#af8d86]/30 hover:border-[#af8d86]">
+                        <h3 class="text-xl font-bold mb-2">StoryOracle</h3>
+                        <p class="text-gray-300 mb-4">NLP system that evaluates narrative quality in short fiction, analyzing readability, tone, and pacing to assist writers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">NLP</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">DistilBERT</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">LLMs</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">Python</span>
+                        </div>
+                        <div class="flex space-x-3">
+                             <a href="#" class="border border-[#af8d86] text-[#af8d86] text-sm font-semibold py-2 px-4 rounded-lg hover:bg-[#af8d86]/20 transition-colors duration-200">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 3 -->
+                    <div class="bg-[#260c1a] border border-[#af8d86]/20 p-6 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-[#af8d86]/30 hover:border-[#af8d86]">
+                        <h3 class="text-xl font-bold mb-2">Architects of Africa's Digital Economy</h3>
+                        <p class="text-gray-300 mb-4">A chronological research analysis of the contributions of women in African technology from 1990 to the present.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">Research</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">Storytelling</span>
+                            <span class="bg-[#5f4842] text-white text-xs font-medium px-2 py-0.5 rounded-full">Advocacy</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="bg-[#af8d86] text-[#260c1a] text-sm font-semibold py-2 px-4 rounded-lg hover:bg-[#edbfc6] transition-colors duration-200 w-full text-center">Read Report</a>
+                        </div>
+                    </div>
+                </div>
+                <function_calls>
+</section>
+
+<!-- EXPERIENCE & ACHIEVEMENTS -->
+    <section id="experience" class="py-20 lg:py-28 transition-colors duration-500" style="background-color: var(--color-bg);">
+        <div class="container mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 flex justify-center items-center" style="color: var(--color-text);">
+                <span data-lucide="star" class="w-8 h-8 mr-3"></span>
+                Experience & Milestones
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Experience Timeline -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 border-b pb-2 border-[#af8d86]/50" style="color: var(--color-text);">
+                        Professional Experience & Roles
+                    </h3>
+                    <div class="space-y-6 relative pl-6">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#af8d86]/30 rounded-full"></div>
+
+                        <div class="relative pl-6">
+                            <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
+                            <p class="font-semibold" style="color: var(--color-text);">Content Writer Intern</p>
+                            <p class="text-sm text-[#af8d86]">1999 Ideas Concepts Innovations & Creations</p>
+                            <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">Sep 2025 - Present</p>
+                        </div>
+                        
+                        <div class="relative pl-6">
+                            <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
+                            <p class="font-semibold" style="color: var(--color-text);">Software Developer</p>
+                            <p class="text-sm text-[#af8d86]">Google Developers Group On Campus - FUD</p>
+                            <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">Jan 2025 - Present</p>
+                        </div>
+                        
+                        <div class="relative pl-6">
+                            <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
+                            <p class="font-semibold" style="color: var(--color-text);">Member</p>
+                            <p class="text-sm text-[#af8d86]">Women TechMakers</p>
+                            <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">2025 - Present</p>
+                        </div>
+                        
+                        <div class="relative pl-6">
+                            <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
+                            <p class="font-semibold" style="color: var(--color-text);">Developer</p>
+                            <p class="text-sm text-[#af8d86]">Nvidia Developer Program</p>
+                            <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">2025 - Present</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements & Certifications -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 border-b pb-2 border-[#af8d86]/50" style="color: var(--color-text);">
+                        Achievements & Certifications
+                    </h3>
+
+                    <div class="mb-10">
+                        <h4 class="text-xl font-semibold text-[#af8d86] mb-4">Key Achievements</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span data-lucide="award" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
+                                <div>
+                                    <p class="font-medium" style="color: var(--color-text);">National Finalist (Top 4)</p>
+                                    <p class="text-sm opacity-70" style="color: var(--color-text);">GLOBE 16th Annual Written Quiz Competition (Oct 2022)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span data-lucide="trophy" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
+                                <div>
+                                    <p class="font-medium" style="color: var(--color-text);">1st Place (Zonal Level)</p>
+                                    <p class="text-sm opacity-70" style="color: var(--color-text);">GLOBE 16th Annual Written Quiz Competition (Jul 2022)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span data-lucide="users" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
+                                <div>
+                                    <p class="font-medium" style="color: var(--color-text);">Coding Team Lead</p>
+                                    <p class="text-sm opacity-70" style="color: var(--color-text);">FIRST LEGO League Nigeria / Coderina (Jul 2022)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold text-[#af8d86] mb-4">Certifications</h4>
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                                <p class="font-medium" style="color: var(--color-text);">Data Science And Analytics</p>
+                                <p class="text-sm opacity-70" style="color: var(--color-text);">HP Life, Nov 2025</p>
+                            </div>
+                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                                <p class="font-medium" style="color: var(--color-text);">Introduction to AI and ML on Google Cloud</p>
+                                <p class="text-sm opacity-70" style="color: var(--color-text);">Google Cloud Skills Boost, Nov 2025</p>
+                            </div>
+                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                                <p class="font-medium" style="color: var(--color-text);">Introduction to Artificial Intelligence</p>
+                                <p class="text-sm opacity-70" style="color: var(--color-text);">IBM, Dec 2025</p>
+                            </div>
+                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
+                                <p class="font-medium" style="color: var(--color-text);">Professional Machine Learning Engineer Study Guide</p>
+                                <p class="text-sm opacity-70" style="color: var(--color-text);">Google Digital Academy, Jul 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 lg:py-28 bg-[#edbfc6] dark:bg-[#260c1a] transition-colors duration-500">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="bg-white dark:bg-[#260c1a] p-8 rounded-xl shadow-lg border-t-4 border-[#432e36] transition-colors duration-500">
+                    <h2 class="text-4xl font-bold text-[#260c1a] dark:text-[#edbfc6] mb-4">
+                        Let's Connect
+                    </h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                        For collaborations, projects, or inquiries related to AI, creative systems, or cloud development, feel free to reach out. I'm always open to new challenges and conversations!
+                    </p>
+                    
+                    <div class="flex items-center mb-6">
+                        <span data-lucide="mail" class="w-6 h-6 mr-3 text-[#432e36] dark:text-[#af8d86]"></span>
+                        <a href="mailto:emmanuella0adams@gmail.com" class="text-[#260c1a] dark:text-[#edbfc6] font-medium hover:text-[#af8d86] transition-colors duration-200">
+                            emmanuella0adams@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a href="" class="text-[#260c1a] dark:text-[#edbfc6] hover:text-[#af8d86] transition-colors duration-200" aria-label="LinkedIn Profile">
+                            <span data-lucide="linkedin" class="w-7 h-7"></span>
+                        </a>
+                        <a href="#" class="text-[#260c1a] dark:text-[#edbfc6] hover:text-[#af8d86] transition-colors duration-200" aria-label="GitHub Profile">
+                            <span data-lucide="github" class="w-7 h-7"></span>
+                        </a>
+                      
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-[#260c1a] p-8 rounded-xl shadow-lg border-t-4 border-[#432e36] transition-colors duration-500">
+                    <h3 class="text-2xl font-bold text-[#260c1a] dark:text-[#edbfc6] mb-6">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 dark:border-[#5f4842] bg-white dark:bg-[#432e36] text-gray-900 dark:text-white rounded-lg focus:ring-[#af8d86] focus:border-[#af8d86] transition-shadow duration-200">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 dark:border-[#5f4842] bg-white dark:bg-[#432e36] text-gray-900 dark:text-white rounded-lg focus:ring-[#af8d86] focus:border-[#af8d86] transition-shadow duration-200">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 dark:border-[#5f4842] bg-white dark:bg-[#432e36] text-gray-900 dark:text-white rounded-lg focus:ring-[#af8d86] focus:border-[#af8d86] transition-shadow duration-200"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#432e36] dark:bg-[#af8d86] text-white dark:text-[#260c1a] font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-[#260c1a] dark:hover:bg-[#432e36] hover:text-white transition-all duration-300">
+                            Submit
+                        </button>
+                    </form>
+                     <p id="form-message" class="mt-4 text-center text-sm font-medium hidden"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#260c1a] text-[#edbfc6] py-8 transition-colors duration-500">
+        <div class="container mx-auto px-6 lg:px-12 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                <p class="text-lg font-semibold mb-3 md:mb-0">
+                    Emmanuella Adams | Creative Technologist
+                    <span class="text-[#af8d86] ml-2 text-sm italic block md:inline">Logic Meets Creativity.</span>
+                </p>
+
+                <div class="flex space-x-4">
+                    <a href="#home" class="hover:text-[#af8d86] transition-colors duration-200">Home</a>
+                    <a href="#projects" class="hover:text-[#af8d86] transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="hover:text-[#af8d86] transition-colors duration-200">Contact</a>
+                </div>
+            </div>
+            
+            <p class="text-sm text-gray-500 mt-4 border-t border-gray-700 pt-4">
+                © 2025 Emmanuella Adams. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</main>
+
+<script>
+    lucide.createIcons();
+
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let currentTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            html.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    setTheme(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const newTheme = html.classList.contains('dark') ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+
+    const navbar = document.getElementById('navbar');
+
+    function updateNavbar() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+            navbar.classList.remove('navbar-default');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+            navbar.classList.add('navbar-default');
+        }
+    }
+
+    window.addEventListener('scroll', updateNavbar);
+    window.addEventListener('load', updateNavbar);
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        formMessage.textContent = `Thank you, ${name}! Your message has been received. I'll be in touch soon.`;
+        formMessage.classList.remove('hidden', 'text-red-500');
+        formMessage.classList.add('text-green-600', 'bg-green-100', 'p-3', 'rounded-md');
+        
+        contactForm.reset();
+
+        setTimeout(() => {
+            formMessage.classList.add('hidden');
+        }, 5000);
+    });
+</script>
+
+</body>
+</html></parameter>
