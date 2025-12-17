@@ -25,12 +25,13 @@ This website was designed to highlight my technical skills and creative projects
 ├── images/             # Project screenshots and assets
 └── files/             # Downloadable resources (CV, etc.)
 
+```
 
 ## 💻 How to Run Locally
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/Emmanuella-Adams/portfolio.git](https://github.com/Emmanuella-Adams/portfolio.git)
+git clone [https://github.com/Emmanuella-Adams/portfolio.git](https://github.com/Emmanuella-Adams/emmanuella-adams-portfolio)
 
 ```
 
@@ -47,9 +48,9 @@ Simply open `index.html` in your preferred web browser.
 
 ## 📬 Contact
 
-**Emmanuella Adams** Email: emmanuella0adams@gmail.com
+Email: emmanuella0adams@gmail.com
 
-LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/emmanuellaadams)
+[LinkedIn](https://linkedin.com/in/emmanuellaadams)
 
 ---
 
