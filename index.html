@@ -65,6 +65,7 @@
                 <a href="#projects" class="text-white hover:text-[#af8d86] transition-colors duration-200">Projects</a>
                 <a href="#experience" class="text-white hover:text-[#af8d86] transition-colors duration-200">Experience</a>
                 <a href="#contact" class="text-white hover:text-[#af8d86] transition-colors duration-200">Contact</a>
+                <a href="/blog/" class="text-white hover:text-[#af8d86] transition-colors duration-200">Blog</a>
             </div>
 
             <div class="flex items-center space-x-4">
@@ -91,6 +92,7 @@
                 <a href="#projects" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Projects</a>
                 <a href="#experience" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Experience</a>
                 <a href="#contact" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Contact</a>
+                <a href="/blog/" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Blog</a>
                 <a href="files/Emmanuella_Adams_Resume.pdf" class="bg-[#af8d86] text-[#260c1a] font-semibold py-2 px-5 rounded-lg text-center mt-2 hover:bg-[#432e36] hover:text-white transition-colors duration-300">
                     Download CV
                 </a>
@@ -538,7 +540,7 @@
 
                 <div class="bg-white dark:bg-[#260c1a] p-8 rounded-xl shadow-lg border-t-4 border-[#432e36] transition-colors duration-500">
                     <h3 class="text-2xl font-bold text-[#260c1a] dark:text-[#edbfc6] mb-6">Send Me a Message</h3>
-                    <form id="contact-form" class="space-y-4">
+                    <form id="contact-form" class="space-y-4" action="https://formsubmit.co/emmanuella0adams@gmail.com" method="POST">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
                             <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 dark:border-[#5f4842] bg-white dark:bg-[#432e36] text-gray-900 dark:text-white rounded-lg focus:ring-[#af8d86] focus:border-[#af8d86] transition-shadow duration-200">
@@ -551,6 +553,9 @@
                             <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
                             <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 dark:border-[#5f4842] bg-white dark:bg-[#432e36] text-gray-900 dark:text-white rounded-lg focus:ring-[#af8d86] focus:border-[#af8d86] transition-shadow duration-200"></textarea>
                         </div>
+                        <!-- Honeypot and Captcha settings for FormSubmit -->
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="false">
                         <button type="submit" class="w-full bg-[#432e36] dark:bg-[#af8d86] text-white dark:text-[#260c1a] font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-[#260c1a] dark:hover:bg-[#432e36] hover:text-white transition-all duration-300">
                             Submit
                         </button>
@@ -574,6 +579,7 @@
                     <a href="#home" class="hover:text-[#af8d86] transition-colors duration-200">Home</a>
                     <a href="#projects" class="hover:text-[#af8d86] transition-colors duration-200">Projects</a>
                     <a href="#contact" class="hover:text-[#af8d86] transition-colors duration-200">Contact</a>
+                     <a href="/blog/" class="hover:text-[#af8d86] transition-colors duration-200">Blog</a>
                 </div>
             </div>
             
@@ -651,16 +657,35 @@
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const name = document.getElementById('name').value;
-        formMessage.textContent = `Thank you, ${name}! Your message has been received. I'll be in touch soon.`;
-        formMessage.classList.remove('hidden', 'text-red-500');
-        formMessage.classList.add('text-green-600', 'bg-green-100', 'p-3', 'rounded-md');
-        
-        contactForm.reset();
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
 
-        setTimeout(() => {
-            formMessage.classList.add('hidden');
-        }, 5000);
+        const name = document.getElementById('name').value;
+        const formData = new FormData(contactForm);
+        
+        fetch("https://formsubmit.co/ajax/emmanuella0adams@gmail.com", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            formMessage.textContent = `Thank you, ${name}! Your message has been received. I'll be in touch soon.`;
+            formMessage.classList.remove('hidden', 'text-red-500');
+            formMessage.classList.add('text-green-600', 'bg-green-100', 'p-3', 'rounded-md');
+            contactForm.reset();
+            setTimeout(() => formMessage.classList.add('hidden'), 5000);
+        })
+        .catch(error => {
+            formMessage.textContent = "Something went wrong. Please try again later.";
+            formMessage.classList.remove('hidden', 'text-green-600');
+            formMessage.classList.add('text-red-500', 'bg-red-100', 'p-3', 'rounded-md');
+        })
+        .finally(() => {
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        });
     });
 </script>
 
