@@ -17,14 +17,14 @@ This website was designed to highlight my technical skills and creative projects
 * **JavaScript** - Interactivity and dynamic elements.
 * **Google Fonts** - Typography.
 
-## 📂 Folder Structure
+## 📂 Folder Structure.
 
 ```text
 /
 ├── index.html          # Main HTML file
 ├── images/             # Project screenshots and assets
 └── files/             # Downloadable resources (CV, etc.)
-
+more can be added.
 ```
 
 ## 💻 How to Run Locally
