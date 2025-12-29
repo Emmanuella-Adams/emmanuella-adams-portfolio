@@ -47,6 +47,44 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Animation Base Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Delay for Lists/Grids */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Pulse for the Timeline Dots */
+@keyframes pulse-dot {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(175, 141, 134, 0.4); }
+    70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(175, 141, 134, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(175, 141, 134, 0); }
+}
+
+.animate-pulse-dot {
+    animation: pulse-dot 2s infinite;
+}
+
+/* Hover Scale for Cards */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
     </style>
 </head>
 <body>
@@ -93,7 +131,7 @@
                 <a href="#experience" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Experience</a>
                 <a href="#contact" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Contact</a>
                 <a href="/blog/" class="text-white hover:text-[#af8d86] transition-colors duration-200 p-2 rounded-md">Blog</a>
-                <a href="files/Emmanuella_Adams_Resume.pdf" class="bg-[#af8d86] text-[#260c1a] font-semibold py-2 px-5 rounded-lg text-center mt-2 hover:bg-[#432e36] hover:text-white transition-colors duration-300">
+                <a href="files/Emmanuella_Adams_Creative_Technologist.pdf" class="bg-[#af8d86] text-[#260c1a] font-semibold py-2 px-5 rounded-lg text-center mt-2 hover:bg-[#432e36] hover:text-white transition-colors duration-300" download>
                     Download CV
                 </a>
             </div>
@@ -125,7 +163,7 @@
                             <a href="#projects" class="inline-block bg-[#260c1a] dark:bg-[#af8d86] text-white dark:text-[#260c1a] font-bold py-3 px-8 rounded-full shadow-xl transform hover:scale-105 transition-all duration-300">
                                 View My Projects
                             </a>
-                            <a href="files/Emmanuella_Adams_Resume.pdf" class="inline-block border-2 border-[#af8d86] text-[#af8d86] dark:text-[#edbfc6] dark:border-[#edbfc6] font-bold py-3 px-8 rounded-full hover:bg-[#af8d86] hover:text-[#260c1a] dark:hover:bg-[#edbfc6] transition-all duration-300">
+                            <a href="files/Emmanuella_Adams_Creative_Technologist.pdf" class="inline-block border-2 border-[#af8d86] text-[#af8d86] dark:text-[#edbfc6] dark:border-[#edbfc6] font-bold py-3 px-8 rounded-full hover:bg-[#af8d86] hover:text-[#260c1a] dark:hover:bg-[#edbfc6] transition-all duration-300" download="">
                                 Download CV
                             </a>
                         </div>
@@ -136,7 +174,7 @@
     <div class="w-72 h-72 md:w-96 md:h-96 rounded-full flex items-center justify-center p-4 shadow-2xl relative border-8 transition-colors duration-500" style="background-color: var(--color-accent-strong); border-color: var(--color-accent-main);">
         
         <img 
-            src="images/looking.jpg" 
+            src="images/img2.jpg" 
             alt="Hero image" 
             class="w-full h-full object-cover rounded-full" 
         />
@@ -420,26 +458,33 @@
                         <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#af8d86]/30 rounded-full"></div>
 
                         <div class="relative pl-6">
+                            <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#af8d86] border-2" style="border-color: var(--color-bg);"></span>
+                            <p class="font-bold text-lg" style="color: var(--color-text);">Founder & Creative Consultant</p>
+                            <p class="text-sm font-medium text-[#af8d86]">Lady Anuelle</p>
+                            <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">Jan 2023 - Present</p>
+                        </div>
+
+                        <div class="relative pl-6">
                             <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
                             <p class="font-semibold" style="color: var(--color-text);">Content Writer Intern</p>
                             <p class="text-sm text-[#af8d86]">1999 Ideas Concepts Innovations & Creations</p>
                             <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">Sep 2025 - Present</p>
                         </div>
-                        
+
                         <div class="relative pl-6">
                             <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
                             <p class="font-semibold" style="color: var(--color-text);">Software Developer</p>
                             <p class="text-sm text-[#af8d86]">Google Developers Group On Campus - FUD</p>
                             <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">Jan 2025 - Present</p>
                         </div>
-                        
+
                         <div class="relative pl-6">
                             <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
                             <p class="font-semibold" style="color: var(--color-text);">Member</p>
                             <p class="text-sm text-[#af8d86]">Women TechMakers</p>
                             <p class="text-xs opacity-60 mt-1" style="color: var(--color-text);">2025 - Present</p>
                         </div>
-                        
+
                         <div class="relative pl-6">
                             <span class="absolute left-[-10px] top-1 w-4 h-4 rounded-full bg-[#432e36] border-2" style="border-color: var(--color-bg);"></span>
                             <p class="font-semibold" style="color: var(--color-text);">Developer</p>
@@ -450,56 +495,101 @@
                 </div>
 
                 <!-- Achievements & Certifications -->
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 border-b pb-2 border-[#af8d86]/50" style="color: var(--color-text);">
-                        Achievements & Certifications
-                    </h3>
 
-                    <div class="mb-10">
-                        <h4 class="text-xl font-semibold text-[#af8d86] mb-4">Key Achievements</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span data-lucide="award" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
-                                <div>
-                                    <p class="font-medium" style="color: var(--color-text);">National Finalist (Top 4)</p>
-                                    <p class="text-sm opacity-70" style="color: var(--color-text);">GLOBE 16th Annual Written Quiz Competition (Oct 2022)</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span data-lucide="trophy" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
-                                <div>
-                                    <p class="font-medium" style="color: var(--color-text);">1st Place (Zonal Level)</p>
-                                    <p class="text-sm opacity-70" style="color: var(--color-text);">GLOBE 16th Annual Written Quiz Competition (Jul 2022)</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span data-lucide="users" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
-                                <div>
-                                    <p class="font-medium" style="color: var(--color-text);">Coding Team Lead</p>
-                                    <p class="text-sm opacity-70" style="color: var(--color-text);">FIRST LEGO League FGC Kiyawa / Coderina (Jul 2022)</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div>
-                        <h4 class="text-xl font-semibold text-[#af8d86] mb-4">Certifications</h4>
-                        <div class="space-y-3">
-                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
-                                <p class="font-medium" style="color: var(--color-text);">Data Science And Analytics</p>
-                                <p class="text-sm opacity-70" style="color: var(--color-text);">HP Life, Nov 2025</p>
-                            </div>
-                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
-                                <p class="font-medium" style="color: var(--color-text);">Introduction to AI and ML on Google Cloud</p>
-                                <p class="text-sm opacity-70" style="color: var(--color-text);">Google Cloud Skills Boost, Nov 2025</p>
-                            </div>
-                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
-                                <p class="font-medium" style="color: var(--color-text);">Artificial Intelligence Fundamentals</p>
-                                <p class="text-sm opacity-70" style="color: var(--color-text);">IBM SkillsBuild, Dec 2025</p>
-                            </div>
-                            <div class="p-4 rounded-lg shadow-sm border-l-4 border-[#af8d86] transition-colors duration-500" style="background-color: var(--color-card-bg);">
-                                <p class="font-medium" style="color: var(--color-text);">Professional Machine Learning Engineer Study Guide</p>
-                                <p class="text-sm opacity-70" style="color: var(--color-text);">Google Digital Academy, Jul 2025</p>
+                                                <div>
+                        <h3 class="text-2xl font-bold mb-6 border-b pb-2 border-[#af8d86]/50" style="color: var(--color-text);">
+                            Achievements & Certifications
+                        </h3>
+
+                        <div class="mb-10">
+                            <h4 class="text-xl font-semibold text-[#af8d86] mb-4">Honors & Awards</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span data-lucide="trophy" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
+                                    <div>
+                                        <p class="font-bold" style="color: var(--color-text);">1st Place – BlockDAG Hackathon</p>
+                                        <p class="text-sm opacity-70" style="color: var(--color-text);">UI/UX Lead for RiskShare Blockchain Platform (2025)</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span data-lucide="award" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
+                                    <div>
+                                        <p class="font-medium" style="color: var(--color-text);">National Finalist (Top 4)</p>
+                                        <p class="text-sm opacity-70" style="color: var(--color-text);">GLOBE 16th Annual Written Quiz Competition, Nigeria (2022)</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span data-lucide="award" class="w-5 h-5 mr-3 text-[#af8d86] flex-shrink-0 mt-0.5"></span>
+                                    <div>
+                                        <p class="font-medium" style="color: var(--color-text);">1st Place (Zonal Level)</p>
+                                        <p class="text-sm opacity-70" style="color: var(--color-text);">GLOBE Zonal Written Quiz Competition, North West Zone (2022)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold text-[#af8d86] mb-6">Professional Certifications</h4>
+                            
+                            <div class="space-y-8">
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest mb-3 opacity-50 font-bold" style="color: var(--color-text);">AI & Machine Learning</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Artificial Intelligence Fundamentals</p>
+                                            <p class="text-xs opacity-70">IBM (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Prompt Design in Vertex AI</p>
+                                            <p class="text-xs opacity-70">Google Cloud (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Professional ML Engineer Study Guide</p>
+                                            <p class="text-xs opacity-70">Google Digital Academy (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Introduction to AI & ML on Google Cloud</p>
+                                            <p class="text-xs opacity-70">Google Cloud (2025)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest mb-3 opacity-50 font-bold" style="color: var(--color-text);">Cloud & Infrastructure</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Google Cloud Fundamentals: Core Infrastructure</p>
+                                            <p class="text-xs opacity-70">Google Cloud (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Cloud Load Balancing for Compute Engine</p>
+                                            <p class="text-xs opacity-70">Google Cloud (2025)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest mb-3 opacity-50 font-bold" style="color: var(--color-text);">Data, Marketing & Cybersecurity</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Data Science & Analytics</p>
+                                            <p class="text-xs opacity-70">HP LIFE (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Certified Content Marketing Specialist</p>
+                                            <p class="text-xs opacity-70">HubSpot Academy (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Introduction to Cybersecurity & Digital Forensics</p>
+                                            <p class="text-xs opacity-70">Bread of Hope (2025)</p>
+                                        </div>
+                                        <div class="p-3 rounded border-l-2 border-[#af8d86] bg-[#af8d86]/5">
+                                            <p class="text-sm font-bold" style="color: var(--color-text);">Python Certification</p>
+                                            <p class="text-xs opacity-70">freeCodeCamp (Ongoing)</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
