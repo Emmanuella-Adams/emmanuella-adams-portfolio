@@ -47,4 +47,3 @@ If I can't reliably update, delete, or view the state of a simple Python diction
 With my Python skills feeling "shiny" again and my **IBM Quantum Business Foundations** badge on my profile, I am officially ready for **Week 3 of my Roadmap: Programming with Qiskit.**
 
 The rust is gone. The foundation is set. Now, let’s build some circuits.
-
